@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Lieent Team's WOG Mods</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+    background:
+        linear-gradient(
+            135deg,
+            #B7B8EA 0%,
+            #B7B8EA 25%,
+            #FB9794 25%,
+            #FB9794 50%,
+            #B7B8EA 50%,
+            #B7B8EA 75%,
+            #FB9794 75%,
+            #FB9794 100%
+        );
+    background-size: 120px 120px;
+            font-family: system-ui, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+            color: #1e2a3e;
+            padding: 2rem 1.5rem 4rem;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.96);
+            border-radius: 2.5rem;
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            padding: 2rem 2rem 2.5rem;
+        }
+
+        /* 强化标题字体（无外部依赖） */
+        .earth-primary, .lieent-title, .work-title, .tagline, .earth-mighty-demo {
+            font-family: 'Impact', 'Arial Black', 'Segoe UI Black', system-ui, sans-serif;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .team-badge .lieent-title {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #3337C3, #EAEAEA, #F51A13);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 0.3rem;
+        }
+
+        .tagline {
+            font-size: 0.9rem;
+            background: #B7B8EA;
+            display: inline-block;
+            padding: 0.3rem 1.2rem;
+            border-radius: 40px;
+        }
+
+        .font-showcase {
+            background: #FB9794;
+            border-radius: 2rem;
+            padding: 1.2rem 1.5rem;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            box-shadow: inset 0 1px 4px rgba(0,0,0,0.3), 0 12px 24px rgba(0,0,0,0.2);
+        }
+
+        .font-label {
+            font-family: monospace;
+            color: #ffffffcc;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+        }
+
+        .earth-mighty-demo {
+            font-size: 68px;
+            color: #ffffffcc;
+            text-shadow: 5px 5px 0 #B56D5C, 8px 8px 0 rgba(0,0,0,0.4);
+            background: none;
+        }
+
+        .earth-mighty-demo.small {
+            font-size: 36px;
+        }
+
+        .work-title {
+            font-size: 1.8rem;
+            background: linear-gradient(120deg, #B7B8EA, #B7B8EA);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .work-card h3 {
+            font-family: 'EarthMightiestBold', 'Segoe UI', system-ui;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #FB9794;
+            margin: 0.2rem 0 0.5rem;
+        }
+
+        .btn-download {
+            background: #3337C3;
+            border: none;
+            padding: 0.5rem 1.2rem;
+            border-radius: 2rem;
+            color: white;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .notice {
+            background: #eaf5e9;
+            border-left: 6px solid #3b8b5e;
+            padding: 0.8rem 1.2rem;
+            border-radius: 1rem;
+            margin-bottom: 1.8rem;
+            font-size: 0.9rem;
+            color: #1c4d2d;
+        }
+
+        .work-card {
+            background: white;
+            border-radius: 1.8rem;
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s;
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2edf2;
+            margin-bottom: 2rem;
+        }
+
+        .work-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-content {
+            padding: 1.8rem 2rem 2rem;
+        }
+
+        .image-wrapper {
+            margin: 1rem 0 1.2rem;
+            border-radius: 1.2rem;
+            background: #f4f8fb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        .work-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 1rem;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+            max-height: 280px;
+        }
+
+        .download-link {
+            margin: 1.2rem 0 0.5rem;
+            background: #f0f4f9;
+            padding: 0.9rem 1.2rem;
+            border-radius: 1.2rem;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: space-between;
+        }
+
+        .link-url {
+            font-family: monospace;
+            font-size: 0.85rem;
+            word-break: break-all;
+            color: #1e4a6b;
+            background: #ffffffcc;
+            padding: 0.4rem 0.8rem;
+            border-radius: 2rem;
+            flex: 1;
+            border: 1px solid #cbdbe2;
+            cursor: pointer;
+        }
+
+        .china-note {
+            background: #fff3e0;
+            border-left: 4px solid #f0a500;
+            padding: 0.5rem 1rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            margin-top: 0.8rem;
+            color: #aa6f00;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2.5rem;
+            font-size: 0.8rem;
+            color: #5f7d9c;
+            border-top: 1px solid #d9e2ea;
+            padding-top: 1.8rem;
+        }
+
+        @media (max-width: 640px) {
+            body { padding: 1rem; }
+            .container { padding: 1.3rem; }
+            .earth-mighty-demo { font-size: 44px; }
+            .work-title { font-size: 1.5rem; }
+            .card-content { padding: 1.2rem; }
+            .download-link { flex-direction: column; align-items: stretch; }
+            .team-badge .lieent-title { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="team-badge">
+        <div class="lieent-title earth-primary">Lieent Team</div>
+        <div class="tagline earth-primary">✦ Lieent Team Official WOG mods ✦</div>
+    </div>
+
+    <div class="font-showcase">
+        <div class="font-label">🔥 Presented To You 🔥</div>
+        <div class="earth-mighty-demo">Lieent</div>
+        <div class="earth-mighty-demo small">Presents</div>
+        <div class="sub-font-note" style="color:#FFFFFF; font-size:12px;">⚡ Colorful ⚡</div>
+    </div>
+
+    <div class="notice">
+        💡 <strong>Published to Goofans Discord</strong> · Lieent Team WOG mods<br>
+        Click the button or copy the link to access the Google Drive folder.
+    </div>
+
+    <!-- 作品1 -->
+    <div class="work-card">
+        <div class="card-content">
+            <div class="work-title">🔮 WOG LW</div>
+            <h3>「WOG: Lit Light World」</h3>
+            <div class="image-wrapper">
+                <img class="work-img" src="http://147.182.181.5:8000/downloads/5750f6f9-445e-419f-be8f-85e72469bcb5_LitLightWorldImage.jpg" alt="Lit Light World Preview">
+            </div>
+            <div class="download-link">
+                <span class="link-url" id="litLightUrl">https://drive.google.com/drive/folders/128OQCz4Gs2_K7r02ldbV8P76VrsQ-SsE</span>
+                <button class="btn-download" data-url="https://drive.google.com/drive/folders/128OQCz4Gs2_K7r02ldbV8P76VrsQ-SsE">📁 Open Folder →</button>
+            </div>
+            <p style="font-size: 0.85rem; color:#4a667b;">Originally, the Lit Light World is a very harmonious world. But one day, a mysterious woman came into this world... (full story)</p>
+            <div class="china-note">⚠️ For users in China Mainland: Google Drive may require a proxy to access. You can copy the link above and open it using other methods.</div>
+        </div>
+    </div>
+
+    <!-- 作品2 -->
+    <div class="work-card">
+        <div class="card-content">
+            <div class="work-title">🔮 FOG re</div>
+            <h3>「Future Of Goo Reimagined」</h3>
+            <div class="image-wrapper">
+                <img class="work-img" src="http://147.182.181.5:8000/downloads/60c9c8f4-c9cc-49a2-be93-5fd87a5c2dfb_FutureOfGooReimaginedImage.png" alt="Future Of Goo Reimagined Preview">
+            </div>
+            <div class="download-link">
+                <span class="link-url">https://drive.google.com/drive/folders/176zE3Z6NzKwWTAsZU0eURUO3iXaYKoAR</span>
+                <button class="btn-download" data-url="https://drive.google.com/drive/folders/176zE3Z6NzKwWTAsZU0eURUO3iXaYKoAR">📁 Open Folder →</button>
+            </div>
+            <p style="font-size: 0.85rem; color:#4a667b;">A mod about World of Goo 300 years later!</p>
+            <div class="china-note">⚠️ For users in China Mainland: Google Drive may require a proxy to access. You can copy the link above and open it using other methods.</div>
+        </div>
+    </div>
+
+    <hr>
+    <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
+        <span class="earth-primary" style="background:#eef2f5; padding: 0.3rem 1rem; border-radius: 20px;">🎮 Try To Play It</span>
+        <span class="earth-primary" style="background:#eef2f5; padding: 0.3rem 1rem; border-radius: 20px;">🧩 That's Fun</span>
+        <span class="earth-primary" style="background:#eef2f5; padding: 0.3rem 1rem; border-radius: 20px;">💾 One-click access to Google Drive</span>
+    </div>
+
+    <footer>
+        <p>Lieent Team shares these WOG mods for free download.</p>
+        <p>✨ Enjoy these delightful works at your leisure, Have Fun! ✨</p>
+    </footer>
+</div>
+
+<script>
+    (function() {
+        // Welcome to the reminder
+        setTimeout(() => alert("🎉 Some New WOG Mods Are Show For You.\nExplore the works of Lieent Team, have fun!🎉"), 180);
+
+        // Button jump
+        document.querySelectorAll('.btn-download').forEach(btn => {
+            const url = btn.getAttribute('data-url');
+            if (url) btn.addEventListener('click', () => window.open(url, '_blank'));
+        });
+
+        // Copy link + China Mainland friendly prompt
+        async function copyText(text, element) {
+            try {
+                await navigator.clipboard.writeText(text);
+                showToast("✅ The link has been copied to the clipboard.");
+                element.style.backgroundColor = "#fff3cf";
+                setTimeout(() => element.style.backgroundColor = "", 200);
+            } catch {
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+                showToast("✅ Copy successful (compatibility mode)");
+                element.style.backgroundColor = "#d9e6c3";
+                setTimeout(() => element.style.backgroundColor = "", 200);
+            }
+        }
+
+        function showToast(msg) {
+            let toast = document.createElement('div');
+            toast.innerText = msg;
+            toast.style.cssText = 'position:fixed; bottom:24px; left:50%; transform:translateX(-50%); background:#1f3b4c; color:#FFE0A3; padding:8px 24px; border-radius:40px; font-weight:bold; z-index:9999; font-size:0.85rem;';
+            document.body.appendChild(toast);
+            setTimeout(() => { toast.style.opacity = '0'; setTimeout(() => toast.remove(), 300); }, 1800);
+        }
+
+        document.querySelectorAll('.link-url').forEach(span => {
+            span.style.cursor = 'pointer';
+            span.title = 'Click to copy link';
+            span.addEventListener('click', () => copyText(span.innerText.trim(), span));
+        });
+    })();
+</script>
+</body>
+</html>
