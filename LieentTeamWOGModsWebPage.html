@@ -19,40 +19,52 @@
     <!-- EarthMightiestBold 字体 -->
     <style>
         @font-face {
-            font-family: 'EarthMightiestBold';
-            src: url('./earthsmightiestbold.ttf') format('truetype');
-            font-display: swap;
-        }
+    font-family: 'EarthMightiestBold';
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    src:
+        url('https://woglitlight.github.io/LieentTeamWOGModsWebPage/earthsmightiestbold.ttf')
+        format('truetype');
 
-        body {
-            background:
-                linear-gradient(
-                    135deg,
-                    #B7B8EA 0%,
-                    #B7B8EA 25%,
-                    #FB9794 25%,
-                    #FB9794 50%,
-                    #B7B8EA 50%,
-                    #B7B8EA 75%,
-                    #FB9794 75%,
-                    #FB9794 100%
-                );
+    font-weight: normal;
+    font-style: normal;
 
-            background-size: 120px 120px;
+    font-display: swap;
+}
 
-            font-family:
-                system-ui,
-                'Segoe UI',
-                'Roboto',
-                'Helvetica Neue',
-                sans-serif;
+/* 全局统一字体 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 
+    font-family:
+        'EarthMightiestBold',
+        system-ui,
+        sans-serif;
+}
+
+body {
+    background:
+        linear-gradient(
+            135deg,
+            #B7B8EA 0%,
+            #B7B8EA 25%,
+            #FB9794 25%,
+            #FB9794 50%,
+            #B7B8EA 50%,
+            #B7B8EA 75%,
+            #FB9794 75%,
+            #FB9794 100%
+        );
+
+    background-size: 120px 120px;
+
+    color: #1e2a3e;
+
+    padding: 2rem 1.5rem 4rem;
+
+    line-height: 1.5;
+}
             color: #1e2a3e;
 
             padding: 2rem 1.5rem 4rem;
@@ -75,23 +87,6 @@
             overflow: hidden;
 
             padding: 2rem 2rem 2.5rem;
-        }
-
-        .earth-primary,
-        .lieent-title,
-        .work-title,
-        .tagline,
-        .earth-mighty-demo {
-            font-family:
-                'Impact',
-                'Arial Black',
-                'Segoe UI Black',
-                system-ui,
-                sans-serif;
-
-            font-weight: bold;
-
-            letter-spacing: 0.5px;
         }
 
         .lieent-title {
@@ -142,8 +137,6 @@
         }
 
         .font-label {
-            font-family: monospace;
-
             color: #ffffffcc;
 
             font-size: 0.8rem;
@@ -288,8 +281,6 @@
         }
 
         .link-url {
-            font-family: monospace;
-
             font-size: 0.85rem;
 
             word-break: break-all;
@@ -533,10 +524,9 @@
 
             <div class="image-wrapper">
 
-                <!-- 建议未来改成本地图片 -->
                 <img
                     class="work-img"
-                    src="./images/LitLightWorldImage.jpg"
+                    src="https://woglitlight.github.io/LieentTeamWOGModsWebPage/LitLightWorldImage.png"
                     alt="Lit Light World Preview"
                 >
 
@@ -592,7 +582,7 @@
 
                 <img
                     class="work-img"
-                    src="./images/FutureOfGooReimaginedImage.png"
+                    src="https://woglitlight.github.io/LieentTeamWOGModsWebPage/FutureOfGooReimaginedImage.png"
                     alt="Future Of Goo Reimagined Preview"
                 >
 
@@ -651,7 +641,7 @@
         </p>
 
         <p>
-            ✨ Enjoy these works at your leisure, Have Fun! ✨
+            ✨Enjoy these works at your leisure, Have Fun!✨
         </p>
 
     </footer>
